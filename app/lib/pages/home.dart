@@ -1,3 +1,4 @@
+import 'package:app/pages/share.dart';
 import 'package:app/reutilizaveis/posts.dart';
 import 'package:app/reutilizaveis/stories.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,7 @@ class UserHome extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         //titleSpacing: 12,
-        //backgroundColor: Colors.transparent,
+        backgroundColor: Colors.transparent,
         elevation: 0,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -33,9 +34,17 @@ class UserHome extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 25),
                   child: Icon(Icons.favorite_border_outlined),
                 ),
-                Icon(Icons.share),
+                GestureDetector(
+                  child: Icon(Icons.share),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SharePage()),
+                    );
+                  },
+                ),
               ],
-            )
+            ),
           ],
         ),
       ),

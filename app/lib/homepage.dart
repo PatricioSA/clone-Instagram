@@ -1,4 +1,4 @@
-import 'package:app/home.dart';
+import 'package:app/pages/home.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: GNav(
         activeColor: Colors.blue,
         tabs: const [
-          GButton(icon: Icons.home),
+          GButton(icon: Icons.home,),
           GButton(icon: Icons.search),
           GButton(icon: Icons.video_library),
           GButton(icon: Icons.shop),

@@ -25,23 +25,33 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _children[_selectedIndex],
-      bottomNavigationBar: GNav(
-        activeColor: Colors.blue,
-        tabs: const [
-          GButton(icon: Icons.home,),
-          GButton(icon: Icons.search),
-          GButton(icon: Icons.video_library),
-          GButton(icon: Icons.shop),
-          GButton(icon: Icons.person),
-        ],
-        selectedIndex: _selectedIndex,
-        onTabChange: (index) {
-          setState(
-            () {
-              _selectedIndex = index;
+      bottomNavigationBar: Container(
+        color: Colors.black,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+          child: GNav(
+            padding: EdgeInsets.all(16),
+            backgroundColor: Colors.black,
+            color: Colors.white,
+            activeColor: Colors.black,
+            tabBackgroundColor: Colors.white,
+            tabs: const [
+              GButton(icon: Icons.home, text: 'Home',),
+              GButton(icon: Icons.search, text: 'Search',),
+              GButton(icon: Icons.video_library, text: 'Reels',),
+              GButton(icon: Icons.shop, text: 'Shop',),
+              GButton(icon: Icons.person, text: 'Conta',),
+            ],
+            selectedIndex: _selectedIndex,
+            onTabChange: (index) {
+              setState(
+                () {
+                  _selectedIndex = index;
+                },
+              );
             },
-          );
-        },
+          ),
+        ),
       ),
     );
   }
